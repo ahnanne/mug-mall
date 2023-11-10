@@ -486,6 +486,13 @@
   resolved "https://registry.yarnpkg.com/@types/json-schema/-/json-schema-7.0.15.tgz#596a1747233694d50f6ad8a7869fcb6f56cf5841"
   integrity sha512-5+fP8P8MFNC+AyZCDxrB2pkZFPGzqQWUzpSeuuVLvm8VMcorNYavBqoFcxK8bQz4Qsbn4oUEEem4wDLfcysGHA==
 
+"@types/loadable__component@^5.13.7":
+  version "5.13.7"
+  resolved "https://registry.yarnpkg.com/@types/loadable__component/-/loadable__component-5.13.7.tgz#2ffee9d9f7fdd231662b0aa5e48a69b01e5efdff"
+  integrity sha512-/FTIqPHwA5FbtjdsxJl8NGByOKtH1dkH2A1BGNViGUPxCEsuckqC+XC7yPVuJWa3AV5webfopDWZ6df6cN0ZHA==
+  dependencies:
+    "@types/react" "*"
+
 "@types/prop-types@*":
   version "15.7.10"
   resolved "https://registry.yarnpkg.com/@types/prop-types/-/prop-types-15.7.10.tgz#892afc9332c4d62a5ea7e897fe48ed2085bbb08a"
