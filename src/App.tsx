@@ -1,11 +1,11 @@
 import { Routes, Route } from 'react-router-dom';
 import loadable from '@loadable/component';
 
-import PageLayout from './components/layout/PageLayout';
+import PageLayout from '@/components/layout/PageLayout';
 
-const MainPage = loadable(() => import('./pages/index'));
-const ProductsPage = loadable(() => import('./pages/products/index'));
-const NoMatchPage = loadable(() => import('./pages/error/NoMatch'));
+const MainPage = loadable(() => import('@/pages/index'));
+const ProductsPage = loadable(() => import('@/pages/products/index'));
+const NoMatchPage = loadable(() => import('@/pages/error/NoMatch'));
 
 function App() {
   return (
