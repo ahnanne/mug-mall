@@ -12,6 +12,8 @@
   "dependencies": {
     "@loadable/component": "^5.15.3",
     "@tanstack/react-query": "^5.8.3",
+    "axios": "^1.6.1",
+    "qs": "^6.11.2",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-router-dom": "6"
@@ -20,6 +22,7 @@
     "@tanstack/react-query-devtools": "^5.8.3",
     "@types/loadable__component": "^5.13.7",
     "@types/node": "^20.9.0",
+    "@types/qs": "^6.9.10",
     "@types/react": "^18.2.15",
     "@types/react-dom": "^18.2.7",
     "@typescript-eslint/eslint-plugin": "^6.0.0",
