@@ -21,7 +21,7 @@ export default {
     params,
     query,
   }: GetCategoryProductsParamsAndQuery) =>
-    pathWithQuery(`/products/${params.category}`, query),
+    pathWithQuery(`/products/category/${params.category}`, query),
   GET_ALL_PRODUCTS: (query: ProductListQuery) =>
     pathWithQuery('/products', query),
   GET_PRODUCT: (params: GetProductParams) => `/products/${params.id}`,
