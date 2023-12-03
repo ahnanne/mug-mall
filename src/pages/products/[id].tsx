@@ -30,7 +30,31 @@ const ProductDetailPage = () => {
     <div>
       <h2>상품 상세 정보</h2>
       <LoadingDecorator isLoading={isFetching}>
-        {isSuccess && <p>{data.data.title}</p>}
+        {isSuccess &&
+          (() => {
+            const { title, image, price, rating, description } = data.data;
+
+            return (
+              <main className="product-detail">
+                <article className="flex">
+                  <div className="product-detail__summary">
+                    <h3>{title}</h3>
+                    <p>${price}</p>
+                    <p>평점: {rating.rate}/5</p>
+                  </div>
+                  <img
+                    className="product-detail__image"
+                    src={image}
+                    alt={title}
+                  />
+                </article>
+
+                <hr />
+
+                <small>{description}</small>
+              </main>
+            );
+          })()}
         {isError && <p>Something went wrong..</p>}
       </LoadingDecorator>
     </div>
