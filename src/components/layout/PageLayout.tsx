@@ -1,8 +1,10 @@
-import { Outlet } from 'react-router-dom';
+import { Link, Outlet } from 'react-router-dom';
 
 const PageLayout = () => (
-  <div>
-    <h1>MugMall</h1>
+  <div className="page-layout">
+    <Link to="/">
+      <h1>MugMall</h1>
+    </Link>
     <hr />
     <Outlet />
   </div>

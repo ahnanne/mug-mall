@@ -1,0 +1,25 @@
+.a11y-hidden { // visually hidden but still accessible
+  overflow: hidden;
+  position: absolute;
+  clip: rect(0 0 0 0);
+  clip-path: polygon(0 0, 0 0, 0 0);
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  white-space: nowrap;
+}
+
+.ellipsis {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  word-break: break-all;
+}
+
+.flex {
+  display: flex;
+}
+
+hr {
+  margin: 20px 0;
+}
