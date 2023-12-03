@@ -9,7 +9,7 @@ const Item = (props: ItemProps) => {
 
   return (
     <article className="product-item">
-      <Link to={`/#?category=${category}&id=${id}`}>
+      <Link to={`/products/${id}?category=${category}`}>
         <img className="product-item__image" src={image} alt="title" />
         <h3>{title}</h3>
       </Link>

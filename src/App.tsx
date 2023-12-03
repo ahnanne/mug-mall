@@ -5,6 +5,7 @@ import PageLayout from '@/components/layout/PageLayout';
 
 const MainPage = loadable(() => import('@/pages/index'));
 const ProductsPage = loadable(() => import('@/pages/products/index'));
+const ProductDetailPage = loadable(() => import('@/pages/products/[id]'));
 const NoMatchPage = loadable(() => import('@/pages/error/NoMatch'));
 
 function App() {
@@ -13,6 +14,7 @@ function App() {
       <Route element={<PageLayout />}>
         <Route index element={<MainPage />} />
         <Route path="products" element={<ProductsPage />} />
+        <Route path="products/:id" element={<ProductDetailPage />} />
         <Route path="*" element={<NoMatchPage />} />
       </Route>
     </Routes>
