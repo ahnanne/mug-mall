@@ -1,5 +1,6 @@
 import axios, { InternalAxiosRequestConfig } from 'axios';
 
+// export const BASE_URL = '/';
 export const BASE_URL = 'https://fakestoreapi.com'; // TODO:
 
 const api = axios.create({

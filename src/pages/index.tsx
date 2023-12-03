@@ -14,7 +14,7 @@ const MainPage = () => {
         {isFetching && <p aria-busy="true">loading...</p>}
         {isSuccess && (
           <ul>
-            {(data?.data ?? []).map((category, idx) => (
+            {(data ?? []).map((category, idx) => (
               <li key={idx}>
                 <Link to={`/products?category=${category}`}>{category}</Link>
               </li>

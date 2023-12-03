@@ -17,7 +17,7 @@ export type Product = {
   rating: Rating;
 };
 
-export type GetProductCategories = () => AxiosPromise<string[]>;
+export type GetProductCategories = () => Promise<string[]>;
 
 export type GetCategoryProductsParams = { category: string };
 export type GetCategoryProductsParamsAndQuery = {
