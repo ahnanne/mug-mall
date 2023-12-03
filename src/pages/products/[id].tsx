@@ -1,17 +1,24 @@
-import { useState, useEffect } from 'react';
-import { useParams } from 'react-router-dom';
+import { useState, useEffect, useMemo } from 'react';
+import { useParams, useLocation, Link } from 'react-router-dom';
 
 import { useGetProduct } from '@/hooks/queries/product';
+import { getQueryFromLocation } from '@/lib/qsHelper';
 
 import LoadingDecorator from '@/components/layout/LoadingDecorator';
 
 const ProductDetailPage = () => {
   const [productId, setProductId] = useState<number | null>(null);
   const params = useParams();
+  const location = useLocation();
 
   const { data, refetch, isFetching, isSuccess, isError } = useGetProduct(
     { id: productId ?? 0 },
     Boolean(productId)
+  );
+
+  const category = useMemo(
+    () => getQueryFromLocation(location, 'category'),
+    [location]
   );
 
   useEffect(() => {
@@ -28,7 +35,12 @@ const ProductDetailPage = () => {
 
   return (
     <div>
-      <h2>상품 상세 정보</h2>
+      <h2 className="a11y-hidden">상품 상세 정보</h2>
+      <div className="breadcrumbs">
+        <Link to="/">Shop</Link>
+        <i>/</i>
+        <Link to={`/products?category=${category}`}>{category}</Link>
+      </div>
       <LoadingDecorator isLoading={isFetching}>
         {isSuccess &&
           (() => {

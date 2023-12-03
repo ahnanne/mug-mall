@@ -23,3 +23,10 @@
 hr {
   margin: 20px 0;
 }
+
+.breadcrumbs {
+  & > i {
+    font-style: normal;
+    margin: 0 10px;
+  }
+}

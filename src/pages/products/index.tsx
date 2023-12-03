@@ -25,7 +25,7 @@ const ProductListPage = () => {
   useEffect(() => {
     const category = getQueryFromLocation(location, 'category');
     setCategory(category);
-  }, []);
+  }, [location]);
 
   useEffect(() => {
     if (!category) {
