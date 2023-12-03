@@ -1,15 +1,15 @@
 import { useState, useMemo, useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
-import { parse } from 'qs';
 
 import { useGetCategoryProducts } from '@/hooks/queries/product';
+import { getQueryFromLocation } from '@/lib/qsHelper';
 
 import LoadingDecorator from '@/components/layout/LoadingDecorator';
 import Item from '@/components/scoped/products/Item';
 
 const ProductListPage = () => {
   const [category, setCategory] = useState('');
-  const { search } = useLocation();
+  const location = useLocation();
 
   const isCategorySet = useMemo(() => Boolean(category), [category]);
 
@@ -23,11 +23,8 @@ const ProductListPage = () => {
     );
 
   useEffect(() => {
-    const queries = parse(search, {
-      ignoreQueryPrefix: true, // to remove '?' on parse result
-    });
-
-    setCategory((queries.category as string) ?? '');
+    const category = getQueryFromLocation(location, 'category');
+    setCategory(category);
   }, []);
 
   useEffect(() => {
