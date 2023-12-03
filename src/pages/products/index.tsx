@@ -45,21 +45,9 @@ const ProductListPage = () => {
         {!isFetching && (
           <>
             {isSuccess && (
-              <ul
-                style={{
-                  display: 'flex',
-                  flexFlow: 'row wrap',
-                  justifyContent: 'center',
-                }}
-              >
+              <ul className="product-list">
                 {(data?.data ?? []).map((product, idx) => (
-                  <li
-                    key={idx}
-                    style={{
-                      listStyle: 'none',
-                      margin: '0 9px',
-                    }}
-                  >
+                  <li key={idx} className="product-list__item">
                     <Item {...product} />
                   </li>
                 ))}

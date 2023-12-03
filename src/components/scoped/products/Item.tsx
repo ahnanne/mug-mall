@@ -8,24 +8,15 @@ const Item = (props: ItemProps) => {
   const { category, description, id, image, price, rating, title } = props;
 
   return (
-    <Link
-      to={`/#?category=${category}&id=${id}`}
-      style={{ display: 'block', width: 'fit-content' }}
-    >
-      <article
-        style={{ maxWidth: '400px', height: '400px', overflowY: 'auto' }}
-      >
-        <img
-          src={image}
-          alt="title"
-          style={{ width: '180px', height: '180px' }}
-        />
+    <article className="product-item">
+      <Link to={`/#?category=${category}&id=${id}`}>
+        <img className="product-item__image" src={image} alt="title" />
         <h3>{title}</h3>
-        <p>{description}</p>
-        <p>{price}</p>
-        <p>{rating.rate}</p>
-      </article>
-    </Link>
+      </Link>
+      <p>${price}</p>
+      <p>평점: {rating.rate}/5</p>
+      <p>{description}</p>
+    </article>
   );
 };
 
