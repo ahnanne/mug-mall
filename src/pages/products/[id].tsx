@@ -11,7 +11,7 @@ const ProductDetailPage = () => {
   const params = useParams();
   const location = useLocation();
 
-  const { data, refetch, isFetching, isSuccess, isError } = useGetProduct(
+  const { data, isFetching, isSuccess, isError } = useGetProduct(
     { id: productId ?? 0 },
     Boolean(productId)
   );
@@ -26,12 +26,6 @@ const ProductDetailPage = () => {
       setProductId(Number(params.id));
     }
   }, [params]);
-
-  useEffect(() => {
-    if (productId) {
-      refetch();
-    }
-  }, [productId]);
 
   return (
     <div>

@@ -22,7 +22,7 @@ export const useGetCategoryProducts = (
   enabled: boolean
 ) => {
   const result = useQuery({
-    queryKey: [queryKeys.CATEGORY_PRODUCTS],
+    queryKey: [queryKeys.CATEGORY_PRODUCTS, options.params.category],
     queryFn: () => productApi.getCategoryProducts(options),
     enabled,
   });
@@ -32,7 +32,7 @@ export const useGetCategoryProducts = (
 
 export const useGetProduct = (options: GetProductParams, enabled: boolean) => {
   const result = useQuery({
-    queryKey: [queryKeys.PRODUCT],
+    queryKey: [queryKeys.PRODUCT, options.id],
     queryFn: () => productApi.getProduct(options),
     enabled,
   });

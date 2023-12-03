@@ -13,27 +13,18 @@ const ProductListPage = () => {
 
   const isCategorySet = useMemo(() => Boolean(category), [category]);
 
-  const { data, refetch, isFetching, isSuccess, isError } =
-    useGetCategoryProducts(
-      {
-        params: { category },
-        query: { limit: 20 },
-      },
-      isCategorySet
-    );
+  const { data, isFetching, isSuccess, isError } = useGetCategoryProducts(
+    {
+      params: { category },
+      query: { limit: 20 },
+    },
+    isCategorySet
+  );
 
   useEffect(() => {
     const category = getQueryFromLocation(location, 'category');
     setCategory(category);
   }, [location]);
-
-  useEffect(() => {
-    if (!category) {
-      return;
-    }
-
-    refetch();
-  }, [category]);
 
   return (
     <>
