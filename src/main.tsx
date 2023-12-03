@@ -6,12 +6,30 @@ import App from './App.tsx';
 import Context from '@/components/context';
 import '@/assets/scss/index.scss';
 
-ReactDOM.createRoot(document.getElementById('root')!).render(
-  <React.StrictMode>
-    <Context.ReactQueryProvider>
-      <BrowserRouter>
-        <App />
-      </BrowserRouter>
-    </Context.ReactQueryProvider>
-  </React.StrictMode>
-);
+async function enableMocking() {
+  try {
+    if (process.env.NODE_ENV !== 'development') {
+      return;
+    }
+
+    const { worker } = await import('@/lib/mocks/browser.ts');
+
+    // `worker.start()` returns a Promise that resolves
+    // once the Service Worker is up and ready to intercept requests.
+    return worker.start(); // activate msw
+  } catch (e) {
+    console.log(e);
+  }
+}
+
+enableMocking().then(() => {
+  ReactDOM.createRoot(document.getElementById('root')!).render(
+    <React.StrictMode>
+      <Context.ReactQueryProvider>
+        <BrowserRouter>
+          <App />
+        </BrowserRouter>
+      </Context.ReactQueryProvider>
+    </React.StrictMode>
+  );
+});
