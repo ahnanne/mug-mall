@@ -1,3 +1,12 @@
 .page-layout {
   padding: 0 30px;
 }
+
+.loading-decorator {
+  opacity: 0;
+  animation: fadeIn 300ms 50ms ease-in forwards;
+}
+
+@keyframes fadeIn { 
+  to { opacity: 100 } 
+}

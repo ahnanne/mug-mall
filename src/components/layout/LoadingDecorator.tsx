@@ -6,7 +6,7 @@ type LoadingDecoratorProps = {
 };
 
 const LoadingDecorator = ({ isLoading, children }: LoadingDecoratorProps) => (
-  <div>
+  <div className="loading-decorator">
     {isLoading && <p aria-busy="true">loading...</p>}
     {!isLoading && children}
   </div>
