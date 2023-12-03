@@ -4,6 +4,7 @@ import { parse } from 'qs';
 
 import { useGetCategoryProducts } from '@/hooks/queries/product';
 
+import LoadingDecorator from '@/components/layout/LoadingDecorator';
 import Item from '@/components/scoped/products/Item';
 
 const ProductListPage = () => {
@@ -40,23 +41,18 @@ const ProductListPage = () => {
   return (
     <>
       <h2>상품 목록 - {category}</h2>
-      <div>
-        {isFetching && <p aria-busy="true">loading...</p>}
-        {!isFetching && (
-          <>
-            {isSuccess && (
-              <ul className="product-list">
-                {(data?.data ?? []).map((product, idx) => (
-                  <li key={idx} className="product-list__item">
-                    <Item {...product} />
-                  </li>
-                ))}
-              </ul>
-            )}
-            {isError && <p>Something went wrong..</p>}
-          </>
+      <LoadingDecorator isLoading={isFetching}>
+        {isSuccess && (
+          <ul className="product-list">
+            {(data?.data ?? []).map((product, idx) => (
+              <li key={idx} className="product-list__item">
+                <Item {...product} />
+              </li>
+            ))}
+          </ul>
         )}
-      </div>
+        {isError && <p>Something went wrong..</p>}
+      </LoadingDecorator>
     </>
   );
 };
