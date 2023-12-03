@@ -8,6 +8,7 @@ export const useGetProductCategories = () => {
   const result = useQuery({
     queryKey: [queryKeys.PRODUCT_CATEGORIES],
     queryFn: productApi.getProductCategories,
+    gcTime: Infinity,
   });
 
   return result;
