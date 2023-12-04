@@ -15,12 +15,15 @@ const getProductCategories: GetProductCategories = () =>
   request(apiPath.GET_PRODUCT_CATEGORIES, queries.GET_CATEGORIES);
 
 const getCategoryProducts: GetCategoryProducts = (options) =>
-  api.get(apiPath.GET_CATEGORY_PRODUCTS(options));
+  request(apiPath.GET_CATEGORY_PRODUCTS(options), queries.GET_PRODUCTS, {
+    category: options.params.category,
+  });
 
 const getAllProducts: GetAllProducts = (query) =>
   api.get(apiPath.GET_ALL_PRODUCTS(query));
 
-const getProduct: GetProduct = (params) => api.get(apiPath.GET_PRODUCT(params));
+const getProduct: GetProduct = (params) =>
+  request(apiPath.GET_PRODUCT(params), queries.GET_PRODUCT, { id: params.id });
 
 export default {
   getProductCategories,

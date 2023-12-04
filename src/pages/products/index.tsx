@@ -32,7 +32,7 @@ const ProductListPage = () => {
       <LoadingDecorator isLoading={isFetching}>
         {isSuccess && (
           <ul className="product-list">
-            {(data?.data ?? []).map((product, idx) => (
+            {(data ?? []).map((product, idx) => (
               <li key={idx} className="product-list__item">
                 <Item {...product} />
               </li>

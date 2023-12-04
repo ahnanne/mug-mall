@@ -38,7 +38,7 @@ const ProductDetailPage = () => {
       <LoadingDecorator isLoading={isFetching}>
         {isSuccess &&
           (() => {
-            const { title, image, price, rating, description } = data.data;
+            const { title, image, price, rating, description } = data;
 
             return (
               <main className="product-detail">

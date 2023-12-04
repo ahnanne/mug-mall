@@ -26,11 +26,11 @@ export type GetCategoryProductsParamsAndQuery = {
 };
 export type GetCategoryProducts = (
   options: GetCategoryProductsParamsAndQuery
-) => AxiosPromise<Product[]>;
+) => Promise<Product[]>;
 
 export type GetAllProducts = (
   query: ProductListQuery
 ) => AxiosPromise<Product[]>;
 
 export type GetProductParams = { id: number };
-export type GetProduct = (params: GetProductParams) => AxiosPromise<Product>;
+export type GetProduct = (params: GetProductParams) => Promise<Product>;

@@ -7,7 +7,19 @@ const GET_CATEGORIES = gql`
 `;
 
 const GET_PRODUCTS = gql`
-  query GET_PRODUCTS {
+  query GET_PRODUCTS($category: string) {
+    id
+    title
+    price
+    category
+    description
+    image
+    rating
+  }
+`;
+
+const GET_PRODUCT = gql`
+  query GET_PRODUCT($id: number) {
     id
     title
     price
@@ -21,6 +33,7 @@ const GET_PRODUCTS = gql`
 const queries = {
   GET_CATEGORIES,
   GET_PRODUCTS,
+  GET_PRODUCT,
 };
 
 export default queries;
