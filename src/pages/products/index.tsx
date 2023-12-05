@@ -3,7 +3,6 @@ import { useLocation } from 'react-router-dom';
 
 import { useGetCategoryProducts } from '@/hooks/queries/product';
 import { getQueryFromLocation } from '@/lib/qsHelper';
-
 import LoadingDecorator from '@/components/layout/LoadingDecorator';
 import Item from '@/components/scoped/products/Item';
 
@@ -12,7 +11,6 @@ const ProductListPage = () => {
   const location = useLocation();
 
   const isCategorySet = useMemo(() => Boolean(category), [category]);
-
   const { data, isFetching, isSuccess, isError } = useGetCategoryProducts(
     {
       params: { category },
