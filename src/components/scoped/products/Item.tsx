@@ -19,7 +19,7 @@ const Item = (props: ItemProps) => {
       return;
     }
 
-    addToCart(props);
+    addToCart(id);
 
     const answer = window.confirm(
       '장바구니에 상품을 추가했습니다. 장바구니로 이동하시겠습니까?'

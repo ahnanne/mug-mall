@@ -1,21 +1,19 @@
 import { StateCreator } from 'zustand';
 
-import { Product } from '@/api/product/types';
-
-export type CartItem = Product & {
+export type CartItem = {
   amount: number;
 };
 
 export type CartState = {
   cart: Map<string, CartItem>;
-  addToCart: (product: Product) => void;
+  addToCart: (productId: number, amount?: number) => void;
 };
 
 const createCartSlice: StateCreator<CartState> = (set) => ({
   cart: new Map(),
-  addToCart: (product) =>
+  addToCart: (productId, amount) =>
     set((state) => ({
-      cart: state.cart.set(String(product.id), { ...product, amount: 1 }),
+      cart: state.cart.set(String(productId), { amount: amount ?? 1 }),
     })),
 });
 

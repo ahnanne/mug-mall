@@ -1,7 +1,7 @@
 import useStore from '@/store';
 
 import LoadingDecorator from '@/components/layout/LoadingDecorator';
-import Item from '@/components/scoped/cart/Item';
+// import Item from '@/components/scoped/cart/Item';
 
 const CartPage = () => {
   const cart = useStore((state) => state.cart);
@@ -13,9 +13,9 @@ const CartPage = () => {
       <LoadingDecorator isLoading={false}>
         <ul>
           {/* eslint-disable-next-line @typescript-eslint/no-unused-vars */}
-          {cartItemPairs.map(([_, cartItem]) => (
-            <li key={cartItem.id}>
-              <Item {...cartItem} />
+          {cartItemPairs.map(([productId, { amount }]) => (
+            <li key={productId}>
+              상품ID: {productId} / 수량: {amount}개
             </li>
           ))}
         </ul>
