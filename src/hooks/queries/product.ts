@@ -6,12 +6,14 @@ import {
   GetCategoryProductsParamsAndQuery,
   GetProductParams,
 } from '@/api/product/types';
+import { GC_TIME } from '@/constants/api';
 
 export const useGetProductCategories = () => {
   const result = useQuery({
     queryKey: [queryKeys.PRODUCT_CATEGORIES],
     queryFn: productApi.getProductCategories,
-    gcTime: Infinity,
+    gcTime: GC_TIME,
+    staleTime: GC_TIME,
   });
 
   return result;
@@ -25,6 +27,8 @@ export const useGetCategoryProducts = (
     queryKey: [queryKeys.CATEGORY_PRODUCTS, options.params.category],
     queryFn: () => productApi.getCategoryProducts(options),
     enabled,
+    gcTime: GC_TIME,
+    staleTime: GC_TIME,
   });
 
   return result;
@@ -35,6 +39,8 @@ export const useGetProduct = (options: GetProductParams, enabled: boolean) => {
     queryKey: [queryKeys.PRODUCT, options.id],
     queryFn: () => productApi.getProduct(options),
     enabled,
+    gcTime: GC_TIME,
+    staleTime: GC_TIME,
   });
 
   return result;
