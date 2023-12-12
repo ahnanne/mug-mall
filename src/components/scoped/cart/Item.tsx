@@ -1,14 +1,14 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 
-import { CartItem } from '@/store/slice/cartSlice';
+import { Product } from '@/api/product/types';
 
-type ItemProps = CartItem;
+type ItemProps = Product;
 
 const Item = (props: ItemProps) => {
-  const { category, id, image, price, title, amount } = props;
+  const { category, id, image, price, title } = props;
 
-  const [mutableAmount, setMutableAmount] = useState(amount);
+  const [mutableAmount, setMutableAmount] = useState(1); // TODO:
 
   return (
     <article className="cart-item">

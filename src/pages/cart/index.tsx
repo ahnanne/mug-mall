@@ -1,23 +1,22 @@
-import useStore from '@/store';
+import { useGetCart } from '@/hooks/queries/cart';
 
 import LoadingDecorator from '@/components/layout/LoadingDecorator';
-// import Item from '@/components/scoped/cart/Item';
+import Item from '@/components/scoped/cart/Item';
 
 const CartPage = () => {
-  const cart = useStore((state) => state.cart);
-  const cartItemPairs = [...cart.entries()];
+  const { data: cart, isFetching } = useGetCart();
 
   return (
     <>
       <h2>장바구니</h2>
-      <LoadingDecorator isLoading={false}>
+      <LoadingDecorator isLoading={isFetching}>
         <ul>
-          {/* eslint-disable-next-line @typescript-eslint/no-unused-vars */}
-          {cartItemPairs.map(([productId, { amount }]) => (
-            <li key={productId}>
-              상품ID: {productId} / 수량: {amount}개
-            </li>
-          ))}
+          {cart &&
+            cart.map((cartItem) => (
+              <li key={cartItem.id}>
+                <Item {...cartItem} />
+              </li>
+            ))}
         </ul>
       </LoadingDecorator>
     </>
