@@ -18,7 +18,7 @@ const mock_products: Array<Product> = Array.from({ length: 20 }, () => ({
 }));
 
 const db = {
-  cart: [] as Array<number>,
+  cart: [] as Array<Product>,
 };
 
 /**\
@@ -30,6 +30,7 @@ export default [
       data: mock_categories,
     });
   }),
+
   graphql.query('GET_PRODUCTS', (req) => {
     return HttpResponse.json({
       data: mock_products.map((product) => ({
@@ -38,6 +39,7 @@ export default [
       })),
     });
   }),
+
   graphql.query('GET_PRODUCT', (req) => {
     return HttpResponse.json({
       data: mock_products.find(
@@ -45,9 +47,22 @@ export default [
       ),
     });
   }),
+
   graphql.mutation('ADD_TO_CART', (req) => {
-    console.log('%cADD_TO_CART req: ', 'color: blue', req);
-    db.cart.push(Number(req.variables.id));
+    const productId: number = req.variables.id;
+
+    const isDuplicated = Boolean(db.cart.find(({ id }) => id === productId));
+    const selectedProduct = mock_products.find(({ id }) => id === productId);
+
+    if (isDuplicated || !selectedProduct) {
+      return HttpResponse.json({
+        data: {
+          success: false,
+        },
+      });
+    }
+
+    db.cart.push(selectedProduct);
 
     return HttpResponse.json({
       data: {
@@ -55,6 +70,7 @@ export default [
       },
     });
   }),
+
   graphql.query('GET_CART', () => {
     return HttpResponse.json({
       data: db.cart,

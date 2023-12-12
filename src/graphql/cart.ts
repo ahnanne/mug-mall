@@ -9,6 +9,12 @@ const ADD_TO_CART = gql`
 const GET_CART = gql`
   query GET_CART {
     id
+    title
+    price
+    category
+    description
+    image
+    rating
   }
 `;
 

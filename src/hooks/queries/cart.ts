@@ -2,6 +2,7 @@ import { useQuery, useMutation } from '@tanstack/react-query';
 import queryKeys from '@/api/queryKeys';
 
 import cartApi from '@/api/cart';
+import { AddToCartResponse } from '@/api/cart/types';
 
 export const useGetCart = () => {
   const result = useQuery({
@@ -12,9 +13,10 @@ export const useGetCart = () => {
   return result;
 };
 
-export const useAddToCart = () => {
+export const useAddToCart = (onSettled: (data?: AddToCartResponse) => void) => {
   const result = useMutation({
     mutationFn: (id: number) => cartApi.addToCart(id),
+    onSettled,
   });
 
   return result;
