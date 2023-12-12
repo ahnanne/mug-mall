@@ -25,4 +25,6 @@ export default {
   GET_ALL_PRODUCTS: (query: ProductListQuery) =>
     pathWithQuery('/products', query),
   GET_PRODUCT: (params: GetProductParams) => `/products/${params.id}`,
+  ADD_TO_CART: (params: { id: number }) => `/cart/${params.id}`,
+  GET_CART: '/cart',
 };

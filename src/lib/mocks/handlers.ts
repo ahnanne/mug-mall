@@ -17,6 +17,10 @@ const mock_products: Array<Product> = Array.from({ length: 20 }, () => ({
   },
 }));
 
+const db = {
+  cart: [] as Array<number>,
+};
+
 /**\
  * Handlers are for intercepting requests and mocking responses.
  */
@@ -39,6 +43,21 @@ export default [
       data: mock_products.find(
         ({ id }) => id === req.variables.id ?? mock_products[0]
       ),
+    });
+  }),
+  graphql.mutation('ADD_TO_CART', (req) => {
+    console.log('%cADD_TO_CART req: ', 'color: blue', req);
+    db.cart.push(Number(req.variables.id));
+
+    return HttpResponse.json({
+      data: {
+        success: true,
+      },
+    });
+  }),
+  graphql.query('GET_CART', () => {
+    return HttpResponse.json({
+      data: db.cart,
     });
   }),
 ];
