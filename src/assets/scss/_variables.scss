@@ -1,0 +1,59 @@
+// colors
+$white: #fff;
+$black: #181818;
+$gray: #4a4a4a;
+$ivory: #f8f8f8;
+$alert-text: rgba(220, 53, 69, 0.75);
+$alert-background: #ef4747;
+$success: #80b918;
+
+$gradient-color-one: $black;
+$gradient-color-two: #aaaaaa;
+$gradient-color-three: #bdbdbd;
+$gradient-color-four: rgba(0, 0, 0, 0.55);
+$gradient-color-five: #f5f6f7;
+
+$key-color: #ff531a;
+$key-fill-color: #ffddd1;
+$dark: #181818;
+$bright: #f2f2f2;
+
+$key-900: #4c1807;
+$key-800: #7f290d;
+$key-700: #b23a12;
+$key-600: #cc4214;
+$key-500: $key-color;
+$key-400: #ff7547;
+$key-300: #ff9775;
+$key-200: #ffbaa3;
+$key-100: #ffddd1;
+$key-50: #ffeee8;
+
+$dark-800: #333333;
+$dark-700: #494949;
+$dark-600: #606060;
+$dark-500: #757575;
+$bright-400: #8e8e8e;
+$bright-300: #a4a4a4;
+$bright-200: #bbbbbb;
+$bright-100: #d2d2d2;
+
+$primary-text-color: $black;
+$light-text-color: $gradient-color-four;
+$body-background-color: $ivory;
+
+// typography
+$font-family: 'Wix Madefor Text', 'SUIT', sans-serif;
+
+$font-weight-normal: 400;
+$font-weight-semibold: 500;
+$font-weight-bold: 700;
+
+$font-size-huge: 60px;
+$font-size-large: 32px;
+$font-size-normal: 16px;
+$font-size-small: 12px;
+$font-size-tiny: 10px;
+
+// spacing
+$space: 1rem;
