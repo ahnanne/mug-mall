@@ -9,7 +9,7 @@ const MainPage = () => {
 
   return (
     <>
-      <h2>Check out our product categories!</h2>
+      <h2>뜨거운 커피의 완벽한 파트너.</h2>
       <LoadingDecorator isLoading={isFetching}>
         {isFetching && <p aria-busy="true">loading...</p>}
         {isSuccess && (
