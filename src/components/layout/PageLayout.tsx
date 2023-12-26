@@ -43,7 +43,9 @@ const PageLayout = () => {
         </nav>
       </header>
       <hr />
-      <Outlet />
+      <div className="content">
+        <Outlet />
+      </div>
     </div>
   );
 };
