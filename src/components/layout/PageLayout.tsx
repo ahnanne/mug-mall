@@ -37,7 +37,16 @@ const PageLayout = () => {
 
           <ul>
             <li>
+              <Link to="#">소개</Link>
+            </li>
+            <li>
+              <Link to="/brand">브랜드</Link>
+            </li>
+            <li>
               <Link to="/cart">장바구니</Link>
+            </li>
+            <li>
+              <Link to="#">로그아웃</Link>
             </li>
           </ul>
         </nav>
@@ -46,6 +55,10 @@ const PageLayout = () => {
       <div className="content">
         <Outlet />
       </div>
+      <hr />
+      <footer>
+        <small>© Mug Mall</small>
+      </footer>
     </div>
   );
 };
