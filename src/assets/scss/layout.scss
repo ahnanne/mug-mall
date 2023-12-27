@@ -4,7 +4,7 @@ html, body {
   height: 100%;
 
   // overide pico color variables
-  --primary-focus: rgba(101, 67, 33, 0.78);
+  --primary-focus: rgba(255, 255, 99, 0.5);
 }
 
 #root {
@@ -57,6 +57,7 @@ body {
 
   h2 {
     font-size: $font-size-large;
+    margin-bottom: 1 * $space;
   }
 
   .content {
@@ -65,7 +66,45 @@ body {
   }
 }
 
+.pagination {
+  display: flex;
+  flex-flow: row nowrap;
+  margin: 0 auto;
+  padding: 0;
+  height: 28px;
+
+  & > li {
+    width: 28px;
+    height: 100%;
+    list-style: none;
+    margin-bottom: 0;
+    line-height: initial;
+    border: 1px solid black;
+    border-right-width: 0;
+  }
+
+  & > li:last-of-type {
+    border-right-width: 1px;
+  }
+
+  & > li > a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    font-size: $font-size-small;
+  }
+
+  & > li.curr > a {
+    background-color: $key-color;
+  }
+}
+
 .loading-decorator {
+  display: flex;
+  flex-flow: column nowrap;
+
   opacity: 0;
   animation: fadeIn 300ms 50ms ease-in forwards;
 }
