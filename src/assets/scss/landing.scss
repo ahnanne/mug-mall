@@ -1,0 +1,22 @@
+#intro {
+  display: flex;
+  width: 100%;
+}
+
+#main-image {
+  width: 50%;
+  height: 500px;
+  background-image: url('../images/mug1.png');
+  background-position: 100% 20%;
+  background-size: auto;
+}
+
+#main-content {
+  display: flex;
+  align-items: center;
+  width: 488px;
+  padding: 0 3 * $space;
+  border: 1px solid $black;
+  font-size: $font-size-normal;
+  word-break: keep-all;
+}
