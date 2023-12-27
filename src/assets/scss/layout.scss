@@ -2,6 +2,9 @@
 
 html, body {
   height: 100%;
+
+  // overide pico color variables
+  --primary-focus: rgba(101, 67, 33, 0.78);
 }
 
 #root {
@@ -41,7 +44,6 @@ body {
 
   header {
     width: $content-width;
-    padding: 0 30px;
     margin: 0 auto;
   }
 
@@ -59,7 +61,6 @@ body {
 
   .content {
     width: $content-width;
-    padding: 0 30px;
     margin: 0 auto;
   }
 }

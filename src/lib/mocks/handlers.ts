@@ -3,7 +3,7 @@ import { faker } from '@faker-js/faker';
 
 import { Product } from '@/api/product/types';
 
-const mock_categories = Array.from({ length: 5 }, () => faker.hacker.noun());
+const mock_categories = Array.from({ length: 8 }, () => faker.hacker.noun());
 const mock_products: Array<Product> = Array.from({ length: 20 }, () => ({
   id: faker.number.int(),
   title: `${faker.hacker.adjective()} ${faker.hacker.noun()}`,

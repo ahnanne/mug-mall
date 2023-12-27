@@ -26,7 +26,10 @@ const ProductListPage = () => {
 
   return (
     <>
-      <h2>상품 목록 - {category}</h2>
+      <h2>
+        브랜드<i>|</i>
+        <span className="brand">{category}</span>
+      </h2>
       <LoadingDecorator isLoading={isFetching}>
         {isSuccess && (
           <ul className="product-list">

@@ -1,3 +1,15 @@
+h2 {
+  & > i {
+    font-style: normal;
+    margin: 0 0.5 * $space;
+  }
+
+  & > .brand {
+    font-style: italic;
+    font-weight: $font-weight-normal;
+  }
+}
+
 .product-list {
   display: flex;
   flex-flow: row wrap;
