@@ -47,6 +47,10 @@ body {
     margin: 0 auto;
   }
 
+  header > nav > ul a {
+    font-weight: $font-weight-bold;
+  }
+
   h1 {
     margin: 0;
     color: $white;
@@ -62,7 +66,7 @@ body {
 
   .content {
     width: $content-width;
-    margin: 0 auto;
+    margin: 60px auto;
   }
 
   footer {
@@ -156,6 +160,7 @@ body {
 .loading-decorator {
   display: flex;
   flex-flow: column nowrap;
+  min-height: 400px;
 
   opacity: 0;
   animation: fadeIn 300ms 50ms ease-in forwards;
