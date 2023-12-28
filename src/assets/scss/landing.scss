@@ -6,9 +6,7 @@
 #main-image {
   width: 50%;
   height: 500px;
-  background-image: url('../images/mug1.png');
-  background-position: 100% 20%;
-  background-size: auto;
+  overflow: hidden;
 }
 
 #main-content {

@@ -3,7 +3,14 @@ const MainPage = () => {
     <>
       <h2>머그몰, 뜨거운 커피의 완벽한 파트너.</h2>
       <section id="intro">
-        <div id="main-image"></div>
+        <div id="main-image">
+          <video autoPlay muted loop={true} height={500}>
+            <source
+              src="https://bucket1182644-staging.s3.ap-northeast-2.amazonaws.com/yymisc/demo-site/demo_main.mp4"
+              type="video/mp4"
+            />
+          </video>
+        </div>
         <div id="main-content">
           <span>
             여러분을 위한 특별한 경험이 시작됩니다. 머그몰은 당신의 일상을 더
