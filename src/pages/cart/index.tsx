@@ -10,14 +10,17 @@ const CartPage = () => {
     <>
       <h2>장바구니</h2>
       <LoadingDecorator isLoading={isFetching}>
-        <ul>
-          {cart &&
-            cart.map((cartItem) => (
+        {cart?.length ? (
+          <ul>
+            {cart.map((cartItem) => (
               <li key={cartItem.id}>
                 <Item {...cartItem} />
               </li>
             ))}
-        </ul>
+          </ul>
+        ) : (
+          <div className="empty">장바구니가 비어 있습니다.</div>
+        )}
       </LoadingDecorator>
     </>
   );
