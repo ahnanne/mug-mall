@@ -19,7 +19,18 @@ const BrandPage = () => {
               {(data ?? []).map((category, idx) => (
                 <li key={idx}>
                   {idx < 3 && <em className="new-brand">신규 브랜드</em>}
-                  <Link to={`/products?category=${category}`}>{category}</Link>
+                  <div className="flex brand-tag">
+                    <span className="brand-name">{category}</span>
+                  </div>
+                  <Link to={`/products?category=${category}`}>
+                    <div className="hover-layer"></div>
+                    <img
+                      src={`https://bucket1182644-staging.s3.ap-northeast-2.amazonaws.com/yymisc/demo-site/brand${
+                        idx + 1
+                      }.png`}
+                      alt="fake-brand-1"
+                    />
+                  </Link>
                 </li>
               ))}
             </ul>

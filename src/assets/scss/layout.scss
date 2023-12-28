@@ -33,7 +33,7 @@ body {
     -moz-border-radius: 50%;
     -webkit-border-radius: 50%;
     position: absolute;
-    z-index: 1;
+    z-index: 999;
     filter: invert(1);
     mix-blend-mode: difference;
   }
