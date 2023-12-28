@@ -8,9 +8,9 @@ import '@/assets/scss/index.scss';
 
 async function enableMocking() {
   try {
-    if (process.env.NODE_ENV !== 'development') {
-      return;
-    }
+    // if (process.env.NODE_ENV !== 'development') {
+    //   return;
+    // }
 
     const { worker } = await import('@/lib/mocks/browser.ts');
 
