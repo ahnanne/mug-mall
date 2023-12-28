@@ -1,6 +1,8 @@
 import { useEffect, useCallback, useState } from 'react';
 import { Link, Outlet } from 'react-router-dom';
 
+import Footer from './Footer';
+
 const PageLayout = () => {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
   const handleMouseMove = useCallback((ev: MouseEvent) => {
@@ -46,7 +48,7 @@ const PageLayout = () => {
               <Link to="/cart">장바구니</Link>
             </li>
             <li>
-              <Link to="#">로그아웃</Link>
+              <Link to="#">마이페이지</Link>
             </li>
           </ul>
         </nav>
@@ -56,9 +58,7 @@ const PageLayout = () => {
         <Outlet />
       </div>
       <hr />
-      <footer>
-        <small>© Mug Mall</small>
-      </footer>
+      <Footer />
     </div>
   );
 };

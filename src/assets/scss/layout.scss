@@ -66,12 +66,54 @@ body {
   }
 
   footer {
+    display: flex;
+    justify-content: space-between;
+
     width: $content-width;
     margin: 0 auto;
     padding-bottom: 2 * $space;
 
     & * {
       font-size: $font-size-small;
+    }
+
+    .icon {
+      display: inline-block;
+      width: 25px;
+      height: 25px;
+      background-image: url('/apple-icon-57x57.png');
+      background-size: cover;
+    }
+
+    .icon + span {
+      vertical-align: super;
+      font-weight: $font-weight-bold;
+    }
+
+    address {
+      margin-bottom: 0;
+
+      a {
+        display: inline-block;
+        width: 100%;
+        text-align: right;
+      }
+    }
+
+    .policies {
+      margin-top: 0.5 * $space;
+    }
+
+    .policies > button {
+      width: max-content;
+      padding: 0.2 * $space 0.5 * $space;
+      border-radius: 0;
+      background-color: $white;
+      border: 1px solid $black;
+
+      &:first-of-type {
+        margin-right: 0.5 * $space;
+      }
     }
   }
 }
