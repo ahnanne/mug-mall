@@ -28,7 +28,7 @@ const BrandPage = () => {
                       src={`https://bucket1182644-staging.s3.ap-northeast-2.amazonaws.com/yymisc/demo-site/brand${
                         idx + 1
                       }.png`}
-                      alt="fake-brand-1"
+                      alt={`fake-brand-${idx + 1}`}
                     />
                   </Link>
                 </li>
