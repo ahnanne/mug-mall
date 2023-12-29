@@ -1,0 +1,10 @@
+{
+  "watch": ["src"],
+  "execMap": {
+    "ts": "ts-node"
+  },
+  "ignore": ["db/**/*"],
+  "env": {
+    "NODE_ENV": "development"
+  }
+}
